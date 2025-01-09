@@ -16,7 +16,7 @@
 ### exa_facts ansible custom module
 #### Gathers facts Oracle Exadata Machine by imageinfo, exadata.img.hw, dmidecode and databasemachine.xml
 
-#### Description :
+#### Description :information_source:
 
 <b>exa_facts</b> is an ansible custom module that creates and adds four dict to ansible_facts
 * exa_img ( from <code>imageinfo</code> command )
@@ -61,14 +61,14 @@
       * CLIENTNAME
       * CLIENTIP
 
-#### Repo files:
+#### Repo files :open_file_folder:
 
 ```
 ├── /library                
 │   └── exa_facts.py   ##<-- python custom module
 ```
 
-#### Requirements :
+#### Requirements :heavy_check_mark:
 
 *  This module supports Oracle Exadata Machine
 *  exa_img require [imageinfo] command
@@ -87,7 +87,7 @@
 |check_mode|full   |Can run in check_mode and return changed status prediction without modifying target.|
 |facts     |full   |Action returns an ansible_facts dictionary that will update existing host facts.    |
 
-#### Examples dict in ansible_facts:
+#### Examples dict in ansible_facts :arrow_forward:
 ```json
     "exa_hw": {
       "model": "HVM domU"
@@ -102,7 +102,7 @@
       "Uptrack kernel version": "4.14.35-2047.522.3.el7uek.x86_64 #2 SMP Fri Jan 20 16:05:02 PST 2023 x86_64",
       "Node type": "GUEST",
       "Image version": "22.1.9.0.0.230302",
-      "System partition on device": "/dev/mapper/VGExaDb-LVDbSys2",
+      "System partition on device": "/dev/mapper/VGExaDb-LVDbSys1",
       "Image label": "OSS_22.1.9.0.0_LINUX.X64_230302",
       "Image kernel version": "4.14.35-2047.518.4.2.el7uek",
       "Install type": "XEN Guest with InfiniBand",
@@ -183,7 +183,7 @@
       }
     }
 ```
-#### Tasks example
+#### Tasks example :arrow_forward:
 #### Gather info
 ```yaml
   - name: Gather exa info
@@ -219,7 +219,7 @@
     debug:
       msg: "{{ ansible_facts.databasemachine.ORACLE_CLUSTER.PAGE0.RACKS.RACK.ITEM | selectattr('TYPE', 'equalto', 'ib') | map(attribute='ADMINNAME') | list }}"
 ```
-## SANITY TEST
+## SANITY TEST :heavy_check_mark:
 
 * Ansible sanity test is available in [SANITY.md] file
 
