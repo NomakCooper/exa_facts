@@ -250,12 +250,24 @@ $ cp path/to/module library
 
 ```
 ├── root repository
-│   ├── playbooks
+│   ├── /playbooks
 │   │    ├── /library                
 │   │    │   └── exa_facts.py      ##<-- python custom module
 │   │    └── your_playbook.yml     ##<-- you playbook
 ```   
-
+2.1 Or create and edit an ansible.cfg file and create a library dir on top of your repo:
+```ini
+[defaults]
+library = library/
+```
+```
+├── root repository
+│   ├── ansible.cfg
+│   ├── /library
+│   │    └── exa_facts.py         ##<-- python custom module
+│   ├── /playbooks
+│   │    └── your_playbook.yml     ##<-- you playbook
+``` 
 [ansible-shield]: https://img.shields.io/badge/Ansible-custom%20module-blue?style=for-the-badge&logo=ansible&logoColor=lightgrey
 [exadata-shield]: https://img.shields.io/badge/oracle-exadata-red?style=for-the-badge&logo=oracle&logoColor=red
 [python-shield]: https://img.shields.io/badge/python-blue?style=for-the-badge&logo=python&logoColor=yellow
