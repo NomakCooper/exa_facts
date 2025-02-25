@@ -13,6 +13,11 @@
 </div>
 
 
+---
+
+> [!warning]
+> **This repository has been archived. The module is available via Ansible galaxy collection [nomakcooper.collection](https://galaxy.ansible.com/ui/repo/published/nomakcooper/collection/).**
+---
 ### exa_facts ansible custom module
 #### Gathers facts Oracle Exadata Machine by imageinfo, exadata.img.hw, dmidecode and databasemachine.xml
 
